@@ -1,6 +1,10 @@
+# 写在前面
+本项目导入自bclswl0827/v2ray-heroku
+当然还有一个重要原因是因为我fork的仓库被封了()
+
 # V2Ray Heroku
 
-**若需部署 V2Ray VLESS，请转到 [vless](https://github.com/bclswl0827/v2ray-heroku/tree/vless) 分支。**
+**若需部署 V2Ray VLESS，请转到 [vless](https://github.com/fangliding/v2ray-heroku-modified/tree/vless) 分支。**
 
 ## 概述
 
@@ -14,9 +18,9 @@
 
  1. Fork 本专案到自己的 GitHub 账户（用户名以 `example` 为例）
  2. 修改专案名称，注意不要包含 `v2ray` 和 `heroku` 两个关键字（修改后的专案名以 `demo` 为例）
- 3. 修改 `README.md`，将 `bclswl0827/v2ray-heroku` 替换为自己的内容（如 `example/demo`）
+ 3. 修改 `README.md`，将 `fangliding/v2ray-heroku-modified` 替换为自己的内容（如 `example/demo`）
 
-> [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/bclswl0827/v2ray-heroku)
+> [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/fangliding/v2ray-heroku-modified)
 
  4. 回到专案首页，点击上面的链接以部署 V2Ray
 
