@@ -18,11 +18,9 @@ cat << EOF > ${DIR_TMP}/heroku.json
             }]
         },
         "streamSettings": {
-            "network": "ws",
-            "wsSettings": {
-                "path": "${WSPATH}",
-                "maxEarlyData": 2048,
-                "earlyDataHeaderName":"Sec-Websocket-Protocol"
+            "network": "grpc",
+            "grpcSettings": {
+                "serviceName": "GunService"
             }
         }
     }],
