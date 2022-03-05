@@ -1,7 +1,7 @@
 # 写在前面
 本项目导入自bclswl0827/v2ray-heroku
 
-支持了ws 0-RTT(v2fly与xray通用)  设置方法 v2ray设置方法 `max early data`设置为'2048' 前置数据标头设置为'Sec-Websocket-Protocol' xray设置方法为在路径最后加上'?ed=2048'
+支持了ws 0-RTT(v2fly与xray通用)  设置方法 v2ray设置方法 `max early data`设置为 '2048' 前置数据标头设置为 'Sec-Websocket-Protocol' xray设置方法为在路径最后加上 '?ed=2048'
 
 当然导入过来还有一个重要原因是因为我fork的仓库被封了()
 
@@ -50,7 +50,7 @@ vmess://eyJhZGQiOiIxLjAuMC4xIiwiYWlkIjoiMCIsImhvc3QiOiJ4eHgueHh4LndvcmtlcnMuZGV2
 可以将应用接入 CloudFlare Worker，从而在一定程度上提升速度。
 worker配置为
 
-`addEventListener(
+ `addEventListener(
 "fetch",event => {
 let url=new URL(event.request.url);
 url.hostname="xx.xxxx.xx";//你的heroku域名
