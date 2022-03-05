@@ -36,9 +36,9 @@
 | `ID` | `ad806487-2d26-4636-98b6-ab85cc8521f7` | VMess 用户主 ID，用于身份验证，为 UUID 格式 |
 | `WSPATH` | `/` | WebSocket 所使用的 HTTP 协议路径 |
 
-##导入
+## 导入
 
-模板
+模板分享链接
 ```
 vmess://eyJhZGQiOiIxLjAuMC4xIiwiYWlkIjoiMCIsImhvc3QiOiJ4eHgueHh4LndvcmtlcnMuZGV2IiwiaWQiOiJhZDgwNjQ4Ny0yZDI2LTQ2MzYtOThiNi1hYjg1Y2M4NTIxZjciLCJuZXQiOiJ3cyIsInBhdGgiOiIiLCJwb3J0IjoiNDQzIiwicHMiOiJoZXJva3UiLCJzY3kiOiJ6ZXJvIiwic25pIjoieHh4Lnh4eC53b3JrZXJzLmRldiIsInRscyI6InRscyIsInR5cGUiOiIiLCJ2IjoiMiJ9
 ```
@@ -47,10 +47,20 @@ vmess://eyJhZGQiOiIxLjAuMC4xIiwiYWlkIjoiMCIsImhvc3QiOiJ4eHgueHh4LndvcmtlcnMuZGV2
 
 ## 接入 CloudFlare
 
-以下两种方式均可以将应用接入 CloudFlare，从而在一定程度上提升速度。
+可以将应用接入 CloudFlare Worker，从而在一定程度上提升速度。
+worker配置为
 
- 1. 为应用绑定域名，并将该域名接入 CloudFlare
- 2. 通过 CloudFlare Workers 反向代理
+addEventListener(
+"fetch",event => {
+let url=new URL(event.request.url);
+url.hostname="xx.xxxx.xx";//你的heroku域名
+let request=new Request(url,event.request);
+event. respondWith(
+fetch(request)
+)
+}
+)
+ 
 
 ## 注意
 
