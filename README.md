@@ -43,14 +43,15 @@
 vmess://eyJhZGQiOiIxLjAuMC4xIiwiYWlkIjoiMCIsImhvc3QiOiJ4eHgueHh4LndvcmtlcnMuZGV2IiwiaWQiOiJhZDgwNjQ4Ny0yZDI2LTQ2MzYtOThiNi1hYjg1Y2M4NTIxZjciLCJuZXQiOiJ3cyIsInBhdGgiOiIiLCJwb3J0IjoiNDQzIiwicHMiOiJoZXJva3UiLCJzY3kiOiJ6ZXJvIiwic25pIjoieHh4Lnh4eC53b3JrZXJzLmRldiIsInRscyI6InRscyIsInR5cGUiOiIiLCJ2IjoiMiJ9
 ```
 请自行将所有xxx.xxx.workers.dev修改为自己的Cloudflare Worker地址 path和uuid均为默认值如果修改了请作出同样的修改并且可以根据上述方法设置ws 0-RTT
-地址默认为1.0.0.1 可以替换为自己优选的ip
+IP地址默认为1.0.0.1 可以替换为自己优选的ip
 
 ## 接入 CloudFlare
 
 可以将应用接入 CloudFlare Worker，从而在一定程度上提升速度。
 worker配置为
 
-`addEventListener(
+`
+addEventListener(
 "fetch",event => {
 let url=new URL(event.request.url);
 url.hostname="xx.xxxx.xx";//你的heroku域名
@@ -59,7 +60,8 @@ event. respondWith(
 fetch(request)
 )
 }
-)`
+)
+`
  
 
 ## 注意
