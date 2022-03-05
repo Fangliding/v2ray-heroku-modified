@@ -1,10 +1,13 @@
 # 写在前面
 本项目导入自bclswl0827/v2ray-heroku
-当然还有一个重要原因是因为我fork的仓库被封了()
+
+支持了ws 0-RTT(v2fly与xray通用)  设置方法 v2ray设置方法 max early data设置为2048 前置数据标头设置为2048 xray设置方法为在路径最后加上"?ed=2048"
+
+当然导入过来还有一个重要原因是因为我fork的仓库被封了()
 
 # V2Ray Heroku
 
-**若需部署 V2Ray VLESS，请转到 [vless](https://github.com/fangliding/v2ray-heroku-modified/tree/vless) 分支。**
+//**若需部署 V2Ray VLESS，请转到 [vless](https://github.com/fangliding/v2ray-heroku-modified/tree/vless) 分支。**
 
 ## 概述
 
@@ -33,6 +36,15 @@
 | `ID` | `ad806487-2d26-4636-98b6-ab85cc8521f7` | VMess 用户主 ID，用于身份验证，为 UUID 格式 |
 | `WSPATH` | `/` | WebSocket 所使用的 HTTP 协议路径 |
 
+##导入
+
+模板
+```
+vmess://eyJhZGQiOiIxLjAuMC4xIiwiYWlkIjoiMCIsImhvc3QiOiJ4eHgueHh4LndvcmtlcnMuZGV2IiwiaWQiOiJhZDgwNjQ4Ny0yZDI2LTQ2MzYtOThiNi1hYjg1Y2M4NTIxZjciLCJuZXQiOiJ3cyIsInBhdGgiOiIiLCJwb3J0IjoiNDQzIiwicHMiOiJoZXJva3UiLCJzY3kiOiJ6ZXJvIiwic25pIjoieHh4Lnh4eC53b3JrZXJzLmRldiIsInRscyI6InRscyIsInR5cGUiOiIiLCJ2IjoiMiJ9
+```
+请自行将所有xxx.xxx.workers.dev修改为自己的cloudflare worker地址 path和uuid均为默认值如果修改了请作出同样的修改并且可以根据上述方法设置ws 0-RTT
+地址默认为1.0.0.1 可以替换为自己优选的ip
+
 ## 接入 CloudFlare
 
 以下两种方式均可以将应用接入 CloudFlare，从而在一定程度上提升速度。
@@ -45,3 +57,4 @@
  1. **请勿滥用本专案，类似 Heroku 的免费服务少之又少，且用且珍惜**
  2. 若使用域名接入 CloudFlare，请考虑启用 TLS 1.3
  3. AWS 绝大部分 IPv4 地址已被 Twitter 屏蔽
+ 4. heroku的地址似乎已经被墙，推荐使用cloudflare worker进行中转
